@@ -1,0 +1,11 @@
+./.gitignore
+*.pyc
+*.zip
+*.py[cod]
+weights/*.onnx
+weights/*.pth
+weights/*.pt
+warnings/
+__pycache__/
+.idea/
+logs/

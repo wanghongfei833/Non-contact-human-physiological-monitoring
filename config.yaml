@@ -1,0 +1,55 @@
+FACE:
+  face_weight: ./weights/face_best.onnx # 指定用于人脸检测的模型权重文件路径（face_best.onnx）。ONNX格式使得模型可以在不同推理引擎中高效运行。
+  face_conf: 0.45 # 目标检测的置信度阈值（0.45）。检测框置信度高于此值才被保留，调高可减少误检但可能漏检，调低则相反。
+  face_iou: 0.3 # 目标检测的IOU阈值（0.3）。用于非极大值抑制，调高可减少检测框重叠但可能漏检，调低则相反。
+  max_age: 3 # 最大年龄（3）。用于维护目标轨迹，超过此年龄未检测到则删除。
+  n_init: 3 # 初始化帧数（3）。用于初始化目标检测，前几帧满足条件即初始化成功。
+  nn_budget: 2 # 最大邻居数（2）。用于维护目标邻居，超过此数量则删除。
+  MDC: 5 # 最大检测次数（5）。用于维护目标检测次数，超过此次数则删除。
+DEEP_FACE:
+  KNOWN_FACE_WIDTH: 15.0  # 标准脸宽（15.0）。
+  D0: 50.0  # 参数D0（50.0）。
+  W0: 380.3  # 参数W0（380.3）。
+BLACK:
+  standard_bbox:
+  - 1000  # 标准检测框（1000, 0, 200, 200）。
+  - 0
+  - 200
+  - 200
+  standard_temp: 35.0  # 标准体温（35.0）。
+  standard_depth: 0.08  # 标准深度（0.08）。
+CAM_INFO:
+  cam_ip: 192.168.1.100  # 相机IP地址（192.168.1.100）。
+FACE_TEMP:
+  # 筛选出异常框的人脸温度，避免错误计算
+  PixSize: 90  # 像素大小（90）。
+  WHS: 4    # 宽高比（4） 高于4的框被排除异常
+  FPR: 0.3  # 人脸像素占框的比例 低于0.3的排除
+  TAT: 20    # 温度流中 大于20的才算人脸 和 FPR配合使用
+  TEMP_MODEL_PATH: ./weights/cross_attention_model.onnx  # 模型权重文件路径（cross_attention_model.onnx）。
+  data_collection: false # 是否启用数据收集（false）。
+  data_collection_path: ./data_collection/    # 数据采集的路径
+
+
+RPPG:
+  MODEL_PATH: ./weights/rppg_10x3x72x72.onnx  # 模型权重文件路径（rppg_10x3x72x72.onnx）。
+  TIME_WINDOW: 30  # 时间窗口（30）。
+  HR_TIME_THRESHOLD: 250  # 心率时间阈值（250）。
+  MIN_HR: 60  # 最小有效心率（60）。
+  MAX_HR: 150  # 最大有效心率（150）。
+  # RPPG 尺寸 默认 72x72 不动
+  INPUT_SIZE:
+  - 72
+  - 72
+EXPORT_INFO:
+  MAX_TEMP_THRESHOLD: 38.0  # 最高体温阈值（38.0）。
+  WARRING_THRESHOLD: 5  # 超过5次测温超过38.0则进行报警存储
+  SAVE_PATH: ./warnings/ # 图像存储位置
+  LOG_PATH: ./logs/
+
+DISPLAY_INFO:
+  MIN_TEMP: 36.5  # 最低体温（36.5）。
+  MAX_TEMP: 39.0  # 最高体温（39.0）。
+  TQL: 15  # 温度信息的 队列长度 可以理解成为 TQL的均值作为温度值
+  HZ: 30  # 更新频率（30）。
+  MAX_LINE: 1000  # 已废弃
