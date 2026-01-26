@@ -293,7 +293,11 @@ class TemperatureCalibration(QThread):
                         self.logger.log_info_enhanced(f'温度信息处理错误(模型推理):{e}',"ERROR")
                         continue
                     try:
-                        queue_push(temp2display_queue,{"ids":ids,"temp":temp_value_list,"bbox":bbox,"depth":depth})
+                        queue_push(temp2display_queue,{"ids":ids,
+                                                       "temp":temp_value_list,
+                                                       "bbox":bbox,
+                                                       "depth":depth}
+                                   )
                     except Exception as e:
                         self.logger.log_info_enhanced(f'温度信息处理错误(队列推送):{e}',"ERROR")
 

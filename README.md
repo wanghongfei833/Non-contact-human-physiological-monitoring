@@ -70,7 +70,7 @@ pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trus
 python main.py
 ~~~
 ## 内部数据流展示
-![data_stream.png](images/data_stream.png)
+![data_stream.jpg](images/data_stream.jpg)
 
 ## 代码分布情况说明
 [main.py](main.py) 作为函数的主入口信息，运行该文件即可启动程序。
