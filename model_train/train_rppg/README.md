@@ -20,7 +20,7 @@ DATA_PATH: "/PURE/RawData"
 CACHED_PATH: "./xxx/xxx"
 
 ~~~
-python main.py --config_file ./configs/train_configs/PURE_PURE_UBFC-PHYS_EFFICIENTPHYS.yaml
+python main.py --config_file PURE_PURE_UBFC-rPPG_EFFICIENTPHYS.yaml
 ~~~
 
 ## 导出模型

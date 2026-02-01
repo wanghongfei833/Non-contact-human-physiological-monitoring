@@ -270,7 +270,7 @@ class TemperatureCalibration(QThread):
                     ids,  depth, temp_arr_bbox,temp_value_list,bbox = self._check_bbox(temp_arr, bbox, ids, depth)
                     if self.data_collection and self.save_info:
                         for depth_value,box in zip(depth,bbox):
-                            txt = f"{depth_value:.4f}-{self.vector[0]:.2f}-{self.vector[1]:.2f}-{self.vector[2]:.2f}"
+                            txt = f"{float(depth_value):.4f}-{float(self.vector[0][0]):.2f}-{float(self.vector[0][1]):.2f}-{float(self.vector[0][2]):.2f}"
                             face_temp_arr = temp_arr[box[1]:box[3],box[0]:box[2]]
                             save_name = os.path.join(f"./{self.data_collection_path}/{txt}.npy")
                             normalized_uint8 = cv2.normalize(face_temp_arr, None, 0, 255, cv2.NORM_MINMAX)

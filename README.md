@@ -1,3 +1,7 @@
+
+
+
+
 # 非接触人体生理信息检测
 ![UI.png](images/UI.png)
 ## 界面介绍
@@ -70,7 +74,7 @@ pip install -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trus
 python main.py
 ~~~
 ## 内部数据流展示
-![data_stream.jpg](images/data_stream.jpg)
+![data_stream.png](images/data_stream.png)
 
 ## 代码分布情况说明
 [main.py](main.py) 作为函数的主入口信息，运行该文件即可启动程序。
@@ -100,6 +104,7 @@ python main.py
 
 将人脸检测框信息和距离信息发送给温度校准模块，其中人脸宽度计算公式如下：
 ![face_depth.png](images/face_depth.png)
+![face_depth_fun.png](images/face_depth_fun.png)
 ### RPPG模块 [qthread_rppg.py](utils/qthread_rppg.py) + [rppg](models/rppg)
 通过QThread进行RPPG的启用，通过调用models中的RPPG模型，利用[qthread_face_utils.py](utils/qthread_face_utils.py) 发送过来的人脸信息计算bvp。
 

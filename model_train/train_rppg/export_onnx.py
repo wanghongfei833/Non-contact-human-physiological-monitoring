@@ -26,8 +26,8 @@ os.chdir(ROOT)
 from EfficientPhys import EfficientPhys
 
 # 导出
-pth_path = r"./runs/exp/PreTrainedModels/PURE_PURE_UBFC_efficientphys_Epoch79.pth"
-onnx_path = r"./runs/exp/PreTrainedModels/PURE_Efficientphys_Epoch79_10x3x72x72.onnx"
+pth_path = r"./PURE_PURE_UBFC_efficientphys_Epoch0.pth"
+onnx_path = r"./PURE_Efficientphys_Epoch79_10x3x72x72.onnx"
 
 
 # onnx_path = r"./UBFC-rPPG_EfficientPhys.onnx"

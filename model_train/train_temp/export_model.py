@@ -85,7 +85,7 @@ def export_model():
         f=str(output_file),
         input_names=["image_input", "feature_input"],
         output_names=["temperature_output"],
-        opset_version=12,
+        opset_version=13,
         do_constant_folding=True,
     )
 

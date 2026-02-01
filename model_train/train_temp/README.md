@@ -1,6 +1,6 @@
 # 人脸温度校准模型的训练
 ## 模型结构示意图
-![img.png](img.png)
+![img.jpg](img.jpg)
 ## 数据采集
 数据采集时，将相机的config的 FACE_TEMP 下的对应参数 data_collection 设置为Ture
 ~~~

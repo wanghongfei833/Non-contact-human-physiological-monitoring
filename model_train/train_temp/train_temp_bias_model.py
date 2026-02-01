@@ -24,7 +24,8 @@ from tqdm import tqdm
 from datasets import   FaceData
 sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from models.temp_biase.temp_bias import  CrossAttentionRegressionModel
-
+import sys
+# print(sys.path)
 # 训练函数
 # 更高级的版本，包含更多指标和可视化
 def train_model(model, train_loader, val_loader, num_epochs=500, lr=1e-3, early_stopping_patience=20):

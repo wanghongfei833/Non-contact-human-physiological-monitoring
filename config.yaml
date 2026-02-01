@@ -27,8 +27,8 @@ FACE_TEMP:
   FPR: 0.3  # 人脸像素占框的比例 低于0.3的排除
   TAT: 20    # 温度流中 大于20的才算人脸 和 FPR配合使用
   TEMP_MODEL_PATH: ./weights/cross_attention_model.onnx  # 模型权重文件路径（cross_attention_model.onnx）。
-  data_collection: false # 是否启用数据收集（false）。
-  data_collection_path: ./data_collection/    # 数据采集的路径
+  data_collection: True # 是否启用数据收集（False）。
+  data_collection_path: ./data_collection_2/    # 数据采集的路径
 
 
 RPPG:

@@ -64,7 +64,7 @@ class FaceData(Dataset):
         true_list = []
         for t,_dirs in zip(true_temp,dir_list):
             sample_data = glob.glob(fr"{_dirs}/*.npy")
-            print(f"{_dirs}找到{len(sample_data)}npy文件")
+            print(f"{_dirs}找到{len(sample_data)}个 npy文件")
             img_list += sample_data
             true_list += [t for _ in sample_data]
         real_data = [0 < float(os.path.basename(i).strip(".npy").split("-")[0]) < 22 for i in img_list]
